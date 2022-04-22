@@ -1,0 +1,27 @@
+# this can be any network from the timm library
+arch: resnet50
+pretrained: true
+dropout_rate: 0.5
+
+# resize images to this size on the fly
+image_size: 136
+# crop to this fraction of image_size
+crop_size: 0.6
+
+# optimizer settings
+optim: adam
+lr: 0.001
+weight_decay: 0.01
+batch_size: 96
+
+# scheduler settings
+gamma: 0.96
+
+# data augmentation
+aug_prob: 0.1
+strong_aug: false
+max_cutout: 0
+segment_green: 0.5
+
+# image preprocessing
+equalize_hist: false

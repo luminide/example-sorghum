@@ -1,0 +1,42 @@
+parameters:
+  arch:
+    values: ['resnet50', 'seresnext50_32x4d', 'efficientnet_b3']
+  dropout_rate:
+    distribution: q_uniform
+    min: 0.0
+    max: 0.75
+    q: 0.25
+  lr:
+    distribution: log_uniform
+    min: 0.0001
+    max: 0.01
+  weight_decay:
+    distribution: q_uniform
+    min: 0.0
+    max: 0.02
+    q: 0.01
+  image_size:
+    distribution: q_uniform
+    min: 136
+    max: 264
+    q: 16
+  crop_size:
+    distribution: q_uniform
+    min: 0.6
+    max: 0.96
+    q: 0.04
+  aug_prob:
+    distribution: uniform
+    min: 0.0
+    max: 0.95
+  segment_green:
+    distribution: uniform
+    min: 0.0
+    max: 0.8
+  max_cutout:
+    distribution: q_uniform
+    min: 0
+    max: 50
+    q: 10
+  strong_aug:
+    values: [True, False]
